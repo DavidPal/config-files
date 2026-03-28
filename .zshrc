@@ -1,4 +1,13 @@
 # ==================================================================================
+# ======= Custom configuration (before Oh My Zsh) ==================================
+# ==================================================================================
+
+# Pyenv configuration
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+
+# ==================================================================================
 # ======= Oh My Zsh configuration ==================================================
 # ==================================================================================
 
@@ -108,7 +117,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ==================================================================================
-# ======= Custom configuration =====================================================
+# ======= Custom configuration (after Oh My Zsh) ===================================
 # ==================================================================================
 
 # Search history based on the current command line prefix with Up and Down arrow keys
@@ -117,8 +126,3 @@ bindkey "^[[6~" history-beginning-search-forward
 
 # Set vim as the default editor
 export EDITOR=vim
-
-# Pyenv configuration
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"

@@ -1,0 +1,55 @@
+---
+schema_version: 0
+flavor: uberone      # base, go, java, android, web, ml, uberone, base-arm
+region: oregon       # oregon, virginia, india, netherlands, brazil
+shell: zsh           # zsh or bash
+release_channel: stable   # stable, rc, dev, or none
+
+# Install apt packages (support pinned versions and .deb URLs)
+packages:
+
+  # Drop-in replacement for `cat` command
+  - bat
+
+  # An arbitrary precision desk calculator
+  - bc
+
+  # Ulity for convertin text file line endings between CRLF and LF
+  - dos2unix
+
+  # Tex/LaTeX/pdfLaTeX/etc. full installation
+  - texlive-full
+
+
+repositories:
+
+  # Oh My Zsh
+  - dest: /home/user/.oh-my-zsh
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+
+  # Spaceship theme fro Oh My Zsh
+  - dest: /home/user/.oh-my-zsh/custom/themes/spaceship-prompt
+    repo: https://github.com/spaceship-prompt/spaceship-prompt.git
+
+  # Personal config files
+  - dest: /home/user/config-files
+    repo: https://github.com/DavidPal/config-files
+
+
+tasks:
+
+  # Properly install spaceship theme.
+  # As explained in spaceship documentation, we need to create a symbolic link.
+  - name: Create symbolic link to spaceship theme configuration file
+    command: ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+    when: on-create,on-restart
+
+  # Create ~/.vimrc file. It will be a symbolic link to a file in my personal git repository.
+  - name: Create symbolic link to vim configuration file
+    command: ln -s ~/config-files/.vimrc ~/.vimrc
+    when: on-create,on-restart
+
+  # Create ~/.zshrc file. It will be a symbolic link to a file in my personal git repository.
+  - name: Create symbolic link to zsh configuration file
+    command: mv ~/.zshrc ~/.zshrc.old && ln -s ~/config-files/.zshrc ~/.zshrc
+    when: on-create,on-restart

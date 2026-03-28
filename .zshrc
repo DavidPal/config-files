@@ -1,15 +1,6 @@
-# Search history based on the current command line prefix with Up and Down arrow keys
-bindkey "^[[5~" history-beginning-search-backward
-bindkey "^[[6~" history-beginning-search-forward
-
-# Set vim as the default editor
-export EDITOR=vim
-
-# Pyenv configuration
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
+# ==================================================================================
+# ======= Oh My Zsh configuration ==================================================
+# ==================================================================================
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -115,3 +106,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# ==================================================================================
+# ======= Custom configuration =====================================================
+# ==================================================================================
+
+# Search history based on the current command line prefix with Up and Down arrow keys
+bindkey "^[[5~" history-beginning-search-backward
+bindkey "^[[6~" history-beginning-search-forward
+
+# Set vim as the default editor
+export EDITOR=vim
+
+# Pyenv configuration
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"

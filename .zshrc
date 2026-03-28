@@ -122,6 +122,12 @@ source $ZSH/oh-my-zsh.sh
 # ======= Custom configuration (after Oh My Zsh) ===================================
 # ==================================================================================
 
+# Remove duplicate entries from your command history.
+setopt histignorealldups
+
+# Share command history between all active Zsh sessions (terminal tabs/windows) in real-time.
+setopt sharehistory
+
 # Search history based on the current command line prefix with Up and Down arrow keys
 bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward

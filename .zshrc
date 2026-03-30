@@ -134,3 +134,9 @@ bindkey "^[[6~" history-beginning-search-forward
 
 # Set vim as the default editor
 export EDITOR=vim
+
+# Remove Oh My ZSh directory aliases
+unalias -g ... 2>/dev/null
+unalias -g .... 2>/dev/null
+unalias -g ..... 2>/dev/null
+unalias -g ...... 2>/dev/null

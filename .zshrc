@@ -136,7 +136,7 @@ bindkey "^[[6~" history-beginning-search-forward
 export EDITOR=vim
 
 # Remove Oh My ZSh directory aliases
-unalias -g ... 2>/dev/null
-unalias -g .... 2>/dev/null
-unalias -g ..... 2>/dev/null
-unalias -g ...... 2>/dev/null
+unalias '...'
+unalias '....'
+unalias '.....'
+unalias '......'

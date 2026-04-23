@@ -122,6 +122,12 @@ source $ZSH/oh-my-zsh.sh
 # ======= Custom configuration (after Oh My Zsh) ===================================
 # ==================================================================================
 
+# Do not truncate path in shell prompt
+SPACESHIP_DIR_TRUNC_REPO=false
+
+# Display time in shell prompt
+SPACESHIP_TIME_SHOW=true
+
 # Remove duplicate entries from your command history.
 setopt histignorealldups
 
